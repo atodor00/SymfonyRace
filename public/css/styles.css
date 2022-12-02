@@ -1,0 +1,76 @@
+
+:root {
+  --input-collor: rgba(52, 92, 105, 0.078);
+}
+a:hover{
+  color: rgb(0, 31, 45);
+}
+
+input{
+    border: 1px solid rgba(0, 0, 0, 0.575);
+    border-radius: 3px;
+    /* background-color:var(--input-collor) */
+}
+#race_csv_file > button{
+  
+  border: 1px solid rgba(0, 0, 0, 0.575);
+    border-radius: 3px;
+    /* background-color:var(--input-collor) */
+}
+#race_RaceDate > select{
+  /* background-color:var(--input-collor) */
+}
+#race_editing_RaceDate > select{
+  /* background-color:var(--input-collor) */
+}
+
+
+
+
+
+
+
+
+
+/* animations */
+  @keyframes slidein {
+    from {
+      margin-left: 16%;
+      /* width: 900%; */
+      opacity: 10%;
+    }
+  
+    to {
+      margin-left: 0%;
+      /* width: 100%; */
+      opacity: 1;
+      
+    }
+  
+}
+  @keyframes appear {
+    from {
+      margin-left: 1%;
+      color: gray;
+      /* width: 900%; */
+      opacity: 10%;
+    }
+  
+    to {
+      margin-left: 0%;
+      color: black;
+      opacity: 1;
+      
+    }
+  
+}
+  .slideIN {
+    
+    animation: 2s 0s alternate slidein;
+    visibility: visible;
+  }
+  .appear {
+    
+    animation: 0.8s 0s alternate appear;
+    visibility: visible;
+  }

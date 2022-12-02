@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RaceController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper container ">
+  {# <h2>List of all results in a race <em>{{posts[0].race.raceName}}</em></h2> #}
+   <div class="shadow p-3 mb-5 bg-white rounded border">
+  
+    <table class="table table-striped"> 
+        <thead class="bg-info">
+            <td>Name</td>          
+            <td>Distance</td>          
+            <td>Race Time</td>          
+            <td>Placement</td>          
+            <td>Action</td>          
+        </thead>
+        <tbody>     
+             {% for posts in posts %}  
+           <tr>               
+                <td>{{posts.fullName}}</td>
+                <td>{{posts.distance}}</td>
+                <td>{{posts.raceTime}}</td>
+                <td>{{posts.placement ? posts.placement:'NULL'}}</td>
+                <td> <a href={{path('race.edit_result', {id: posts.id} )}} class="btn-outline-info btn">
+                Edit
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg>
+                </a></td>
+            </tr>    
+            {% endfor %}       
+        </tbody>
+    </table>
+    <table class="table table-striped"> 
+        <thead class="bg-info">
+        
+            <td>Name</td>          
+            <td>Distance</td>          
+            <td>Race Time</td>          
+            <td>Placement</td>          
+            <td>Action</td>          
+        </thead>
+        <tbody>     
+             {% for posts2 in posts2 %}  
+           <tr>
+                <td>{{posts2.fullName}}</td>
+                <td>{{posts2.distance}}</td>
+                <td>{{posts2.raceTime}}</td>
+                <td>{{posts2.placement ? posts2.placement:'NULL'}}</td>
+                <td> <a href={{path('race.edit_result', {id: posts2.id} )}} class="btn-outline-info btn">
+                Edit
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg>
+                </a></td>
+            </tr>    
+            {% endfor %}
+        </tbody>
+    </table>
+      <table class="table table-striped"> 
+        <thead class="bg-info">
+            <td>Avg Time</td>
+            <td>Long</td>          
+            <td>Medium</td>          
+        </thead>
+        <tbody>      
+           <tr>       
+                <td>=></td>
+                <td>{{long_time}}</td>
+                <td>{{medium_time}}</td>
+            </tr>    
+         
+        </tbody>
+    </table>
+   </div>
+
+</div>
+
+
+{% endblock %}
